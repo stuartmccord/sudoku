@@ -1,22 +1,28 @@
-# -*- coding: utf-8 -*-
+import pathlib
+from setuptools import setup
 
-# Learn more: https://github.com/kennethreitz/setup.py
+# The directory containing this file
+HERE = pathlib.Path(__file__).parent
 
-from setuptools import setup, find_packages
+# The text of the README file
+README = (HERE / "README.md").read_text()
 
-
-with open('README.rst') as f:
-    readme = f.read()
-
-with open('LICENSE') as f:
-    license = f.read()
-
+# This call to setup() does all the work
 setup(
-    name='sudoku',
-    version='0.1.0',
-    description='Package to solve sudoku',
-    author='Stuart McCord',
-    author_email='stuart.mccord@gmail.com',
-    url='https://github.com/kennethreitz/samplemod',
-    packages=find_packages()
+    name="sudoku",
+    version="1.0.0",
+    description="Basic library to solve sudoku",
+    long_description=README,
+    long_description_content_type="text/markdown",
+    url="https://github.com/stuartmccord/sudoku",
+    author="Stuart McCord",
+    author_email="stuart.mccord@gmail.com",
+    license="MIT",
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+    ],
+    packages=["sudoku"],
+    include_package_data=True,
 )
